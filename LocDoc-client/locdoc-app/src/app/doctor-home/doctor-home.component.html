@@ -1,0 +1,25 @@
+<header class="">
+  <div class="main-header"><img src="../../assets/locdoclogo.png"><span class="welcomeUser">Welcome, {{fullName}}</span></div>
+</header>
+
+<table class="table table-striped table-bordered table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Contact Number</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Cancel Appointment</th>
+  </tr>
+
+  <tr *ngFor='let docapp of docAppdetails'>
+    <td>{{docapp.patientName}}</td>
+    <td>{{docapp.emailId}}</td>
+    <td>{{docapp.contactNumber}}</td>
+    <td>{{docapp.dateofApp}}</td>
+    <!--<td>{{docapp.doctorName}}</td>-->
+    <td>{{docapp.timeofApp}}</td>
+    
+    <td><button class="btn btn btn-danger" (click)="deleteAppointment(docapp)">Delete</button></td>
+  </tr>
+</table>

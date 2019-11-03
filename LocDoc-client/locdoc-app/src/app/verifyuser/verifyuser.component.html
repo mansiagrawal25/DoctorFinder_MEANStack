@@ -1,0 +1,17 @@
+<!-- Email verification to activate account -->
+<body>
+<form>
+  <mat-toolbar>
+    <div>
+      Enter verification code
+    </div>
+  </mat-toolbar>
+
+    <mat-form-field>
+      <input  matInput name="secretToken" [(ngModel)]="secretToken" type="text" placeholder="Verification code" required>
+    </mat-form-field>
+
+    <button  mat-stroked-button  (click)="verify(secretToken)">Verify</button>
+</form>
+</body>
+

@@ -1,0 +1,62 @@
+
+<header class="header">
+
+  <span class="heading_Main">Loc-Doc</span><br>
+
+ </header>
+ <div class= "topspacing"></div>
+<div class="example-container">
+  <span class="heading--register">Register User</span><br><br><br>
+  <mat-form-field appearance="outline">
+    <mat-label>Full Name</mat-label>
+    <input matInput placeholder="Full Name" [(ngModel)]="fullname" required> 
+  </mat-form-field> &nbsp; &nbsp; &nbsp;
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput placeholder="Email Id" [(ngModel)]="emailId" email="true" required>
+  </mat-form-field> &nbsp; &nbsp; &nbsp;
+  <mat-form-field appearance="outline">
+    <mat-label>Address</mat-label>
+    <input matInput placeholder="Local Adress" [(ngModel)]="localAddress" required>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>City</mat-label>
+    <input matInput placeholder="City" [(ngModel)]="city" required>
+  </mat-form-field> &nbsp; &nbsp; &nbsp;
+  <mat-form-field appearance="outline">
+    <mat-label>State</mat-label>
+    <input matInput placeholder="State" [(ngModel)]="state" required>
+  </mat-form-field> &nbsp; &nbsp; &nbsp;
+  <mat-form-field>
+    <mat-select placeholder="Gender" [(ngModel)]="gender" required>
+      <mat-option value="Male">Male</mat-option>
+      <mat-option value="Female">Female</mat-option>
+      <mat-option value="Other">Other</mat-option>
+    </mat-select>
+  </mat-form-field> &nbsp; &nbsp; &nbsp; &nbsp;
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Date of Birth" [(ngModel)]="dateofBirth" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+
+  <mat-form-field appearance="outline">
+    <mat-label>Contact Number</mat-label>
+    <input matInput placeholder="Contact Number"  ng-maxlength="10" minlength="9" maxlength="10" [(ngModel)]="contactNumber" required>
+  </mat-form-field> &nbsp; &nbsp; &nbsp;
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input type="password" matInput placeholder="Password" name="psw" [(ngModel)]="password" minlength= "6" ng-required>
+      <!-- <p class="error" ng-show="psw.$invalid && myform.psw.$touched"> Please, enter a 6 digit password</p> -->
+  </mat-form-field> &nbsp; &nbsp; &nbsp;
+  <mat-form-field appearance="outline">
+    <mat-label>Confirm Password</mat-label>
+    <input type="password" matInput placeholder="Confirm Password" [(ngModel)]="confirmPassword" minlength= "6" required>
+  </mat-form-field>
+  <mat-card-actions>
+    <div class="auth-error" *ngIf="error">Please fill all required details</div><br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<button class="btn-register"(click)="register()" >Register</button>
+    <button class="btn-register-logIn" [routerLink]="['/login']" routerLinkActive="router-link-active">Log In</button>
+    </mat-card-actions>
+   
+</div>

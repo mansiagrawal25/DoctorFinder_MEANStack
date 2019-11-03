@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+/* css for header*/
+.header {
+	height: 60px;
+	margin-top: -1px;
+	background: #36a4db; /* fallback for old browsers */
+	background: -webkit-linear-gradient(right, #36a4db, #d1cbe9);
+	background: -moz-linear-gradient(right, #36a4db, #d1cbe9);
+	background: -o-linear-gradient(right, #36a4db, #d1cbe9);
+	background: linear-gradient(to left, #36a4db, #d1cbe9);
+	letter-spacing: 0.1em;
+	box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	background-size: cover;
+	background-position: top;
+	position: relative;
+	width: 99%;
+}
+/*top spacing gap*/
+.topspacing {
+	margin-top:70px;
+	
+}
+/*page heading*/
+.heading_Main{
+	color: #16305b;
+	font-family: "Roboto", sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	
+	letter-spacing: 0.5rem;
+	
+
+}
+/*page body*/
+  .example-container{
+
+		position: relative;
+		z-index: 1;
+		background: #FFFFFF;
+		max-width: 860px;
+		margin: 0 auto 100px;
+		padding: 45px;
+		text-align: center;
+		box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+		background: #d1cbe9; /* fallback for old browsers */
+ 		 background: -webkit-linear-gradient(right, #d1cbe9, #c2d1e8);
+ 		 background: -moz-linear-gradient(right, #d1cbe9, #c2d1e8);
+  		background: -o-linear-gradient(right, #d1cbe9, #c2d1e8);
+ 		 background: linear-gradient(to left, #d1cbe9, #c2d1e8);
+ 		 font-family: "Roboto", sans-serif;
+ 		 -webkit-font-smoothing: antialiased;
+ 		 -moz-osx-font-smoothing: grayscale;    
+  }
+/*register heading*/
+  .heading--register{
+	font-family: "Roboto", sans-serif;
+	font-size: 30px;
+	color: #16305b;
+  }	
+ 
+  /*Removing spinner button from number input field*/
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+	-webkit-appearance: none; 
+	margin: 0; 
+  }

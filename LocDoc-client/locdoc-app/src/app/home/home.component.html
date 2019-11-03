@@ -1,0 +1,75 @@
+<header class="">
+  <div id="userInfo" hidden>{{jsonData}}</div>
+  <div class="main-header"><img src="../../assets/locdoclogo.png"><span class="welcomeUser">Welcome, {{fullname}}</span></div>
+</header>
+  <div class= "topspacing"></div>
+  <div class="sidebar">
+  <ul class="profilelist">
+
+      <li><button mat-raised-button  (click)="viewProfile()"  ng-model="checked" color="primary">View Profile</button></li>
+      <li><a ><span class="navbar" (click)="updateProfilePage()">Update Profile</span></a></li>
+      <li><a><span class="navbar" [routerLink]="['/view-appointments']" (click)="viewAppointment()">View Appointment</span></a></li>
+      <li><a><span class="navbar" [routerLink]="['/login']" routerLinkActive="router-link-active" >Logout</span></a></li>
+  </ul>
+  </div>
+ 
+ <div class="homePage">
+    <mat-card-actions>
+        <button mat-raised-button  (click)="viewProfile()"  ng-model="checked" color="primary">View Profile</button>
+        <button mat-raised-button  (click)="onClick()"  color="primary">Delete Profile</button>
+        </mat-card-actions>
+  <div class="userDetails" ng-show="checked" *ngIf="show">
+      
+      <span class="user-header">Personal Details</span>
+      <br>
+   
+        <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input matInput placeholder="Full Name" [(ngModel)]="fullname" required readonly> 
+          </mat-form-field> &nbsp; &nbsp; &nbsp;
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="Email Id" [(ngModel)]="emailId" email="true" readonly required> 
+          </mat-form-field> &nbsp; &nbsp; &nbsp;
+          <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <input matInput placeholder="Local Adress" [(ngModel)]="localAddress" readonly required>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+            <input matInput placeholder="City" [(ngModel)]="city" readonly required>
+          </mat-form-field> &nbsp; &nbsp; &nbsp;
+          <mat-form-field appearance="outline">
+            <mat-label>State</mat-label>
+            <input matInput placeholder="State" [(ngModel)]="state" readonly required>
+          </mat-form-field> &nbsp; &nbsp; &nbsp;
+          <mat-form-field appearance="outline">
+              <mat-label>Gender</mat-label>
+              <input matInput placeholder="Gender" [(ngModel)]="gender"readonly required>
+            
+            
+          </mat-form-field> &nbsp; &nbsp; &nbsp; &nbsp;
+          <mat-form-field apperance="outline">
+              <input matInput [matDatepicker]="picker" placeholder="Date of Birth" [(ngModel)]="dateofBirth" readonly required>
+              <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> -->
+            </mat-form-field>
+           &nbsp; &nbsp; &nbsp; &nbsp;
+        
+          <mat-form-field appearance="outline">
+            <mat-label>Contact Number</mat-label>
+            <input matInput placeholder="Contact Number" [(ngModel)]="contactNumber" readonly required>
+          </mat-form-field> &nbsp; &nbsp; &nbsp;
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput placeholder="Password" [(ngModel)]="password" readonly required>
+          </mat-form-field> &nbsp; &nbsp; &nbsp;
+     
+    
+
+</div>
+<app-doctor-search></app-doctor-search>
+ 
+</div>
+
+<!--<app-doctor-search></app-doctor-search>-->
+

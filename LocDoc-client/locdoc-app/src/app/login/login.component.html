@@ -1,0 +1,35 @@
+<header class="header">
+  <span class="heading_Main">Loc Doc</span><br>
+
+ </header>
+ <div class= "topspacing"></div>
+ <div class="login-body">
+<div class="example-container">
+  <span class="heading--login">Login</span><br><br><br><br>
+      
+      <div  class="login-alert" *ngIf="invalidUser"> 
+        Error: Invalid Email or Password
+      </div> <br>
+      <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" [(ngModel)]="emailId" name="username" required>
+        </mat-form-field> &nbsp; &nbsp; &nbsp;
+      <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" [(ngModel)]="password"type="password" name="password"  minlength= "6" required>
+           <!-- <p class="error" ng-show="password.$invalid && password.$touched"> Please, enter a 6 digit password</p> -->
+      </mat-form-field> &nbsp; &nbsp; &nbsp;
+      <div class="auth-error" *ngIf="error">Enter Valid Email or Password</div>
+  <div ><br><br><br>
+    <mat-card-actions>
+      <button mat-raised-button  (click)="login()" color="primary">Login</button>
+      </mat-card-actions>
+      <br>
+      <br>
+  <span class="forgotPassword" [routerLink]="['/forgotpassword']" routerLinkActive="router-link-active" >Forgot Password?</span><br>
+  
+   <span class="registerUser" [routerLink]="['/registerUser']" routerLinkActive="router-link-active" >Register User</span><br>
+   <span class="registerDoctor" [routerLink]="['/registerDoctor']" routerLinkActive="router-link-active" >Register Doctor</span><br>
+  </div>
+</div>
+</div>

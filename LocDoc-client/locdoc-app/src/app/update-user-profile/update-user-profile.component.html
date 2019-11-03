@@ -1,0 +1,111 @@
+<!-- Heading -->
+<header class="header">
+    <div id="userInfo" hidden>{{jsonData}}</div>
+    <ul>
+        <li><a class="active" (click)="userHome()">Home</a></li>
+        <li><a><span class="navbar" [routerLink]="['/view-appointments']">View Appointment</span></a></li>
+        <li><a><span class="navbar" [routerLink]="['/login']" routerLinkActive="router-link-active" >Logout</span></a></li>
+    </ul>
+
+   
+<!--     
+      <div class="userDetails" >
+          
+          <span class="user-header">Personal Details</span>
+        <p id="userHomePage" >Full Name: {{fullname}}
+          <label></label>
+          
+          <input type="text" id="userDetails" name="fullName" [(ngModel)]="fullname" value="" >
+        </p> 
+        
+        <p id="userHomePage">Email: {{emailId}}
+          <input type="text" id="userDetails" name="Email" [(ngModel)]="emailId" value="" >
+        </p> 
+        <p id="userHomePage">Address: {{localAddress}}
+          <input type="text" id="userDetails" name="Address" [(ngModel)]="localAddress" value="" >
+           <p id="userHomePage">City: {{city}}
+             <input type="text" id="userDetails" name="City" [(ngModel)]="city" value="" >
+           <p id="userHomePage">State: {{state}}
+             <input type="text" id="userDetails" name="State" [(ngModel)]="state" value="" >
+          
+        </p>
+        <p id="userHomePage">Gender: {{Gender}}
+          <input type="text" id="userDetails" name="Gender" [(ngModel)]="gender" value="" ></p>  
+        <p id="userHomePage">Date Of Birth: {{dateofBirth}}
+          <input type="text" id="userDetails" [(ngModel)]="dateofBirth" name="Date Of Birth" value="" ></p>  
+       
+        <p id="userHomePage">Contact No: {{contactNumber}}
+          <input type="text" id="userDetails" [(ngModel)]="contactNumber" name="Contact No" value="" ></p>  
+          <p id="userHomePage">Password: {{password}}
+              <input type="text" id="userDetails" [(ngModel)]="password" name="password" value="" ></p>  
+    </div> -->
+
+<!-- Heading -->
+
+<header class="header">
+
+    <span class="heading_Main">Loc Doc</span><br>
+  
+   </header>
+
+   <!-- Update-user body -->
+  <div class="example-container">
+    <span class="heading--register">Register User</span><br><br><br>
+    <mat-form-field appearance="outline">
+      <mat-label>Full Name</mat-label>
+      <input matInput placeholder="Full Name" [(ngModel)]="fullname" required> 
+    </mat-form-field> &nbsp; &nbsp; &nbsp;
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput placeholder="Email Id" [(ngModel)]="emailId" email="true" required>
+    </mat-form-field> &nbsp; &nbsp; &nbsp;
+    <mat-form-field appearance="outline">
+      <mat-label>Address</mat-label>
+      <input matInput placeholder="Local Adress" [(ngModel)]="localAddress" required>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>City</mat-label>
+      <input matInput placeholder="City" [(ngModel)]="city" required>
+    </mat-form-field> &nbsp; &nbsp; &nbsp;
+    <mat-form-field appearance="outline">
+      <mat-label>State</mat-label>
+      <input matInput placeholder="State" [(ngModel)]="state" required>
+    </mat-form-field> &nbsp; &nbsp; &nbsp;
+    <mat-form-field>
+      <mat-select placeholder="Gender" [(ngModel)]="gender" required>
+        <mat-option value="Male">Male</mat-option>
+        <mat-option value="Female">Female</mat-option>
+        <mat-option value="Other">Other</mat-option>
+      </mat-select>
+    </mat-form-field> &nbsp; &nbsp; &nbsp; &nbsp;
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Date of Birth" [(ngModel)]="dateofBirth" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> &nbsp; &nbsp; &nbsp; &nbsp;
+  
+    <mat-form-field appearance="outline">
+      <mat-label>Contact Number</mat-label>
+      <input matInput placeholder="Contact Number" [(ngModel)]="contactNumber" required>
+    </mat-form-field> &nbsp; &nbsp; &nbsp;
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput placeholder="Password" [(ngModel)]="password" required>
+    </mat-form-field> &nbsp; &nbsp; &nbsp;
+    
+    <!-- <mat-form-field appearance="outline">
+      <mat-label>Confirm Password</mat-label>
+      <input type="password" matInput placeholder="Confirm Password" [(ngModel)]="confirmPassword" required>
+    </mat-form-field> -->
+    <mat-card-actions>
+      <div class="auth-error" *ngIf="error">Please fill all required details</div><br>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      </mat-card-actions>
+     
+  </div>
+
+<!-- SAVE button -->
+<button type="button" class="btn-saveProfile" (click)="updateProfile()">Save</button>
+
+<button type="button" class="btn-saveProfile" (click)="updateProfile()">Save</button>
+

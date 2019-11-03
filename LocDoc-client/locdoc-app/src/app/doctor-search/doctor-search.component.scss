@@ -1,0 +1,67 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+
+/*top spacing gap*/
+.topspacing {
+	margin-top:70px;
+	
+}
+/*heading */
+.header {
+	height: 60px;
+	margin-top: -1px;
+	box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+	background: #36a4db; /* fallback for old browsers */
+	background: -webkit-linear-gradient(right, #2385b6, #b9afe0);
+	background: -moz-linear-gradient(right, #2385b6, #b9afe0);
+	background: -o-linear-gradient(right, #2385b6, #b9afe0);
+	background: linear-gradient(to left, #2385b6, #b9afe0);
+	letter-spacing: 0.1em;
+	background-size: cover;
+	background-position: top;
+	position: relative;
+	width: 99%;
+}
+/*page heading*/
+.heading_Main{
+	color: #16305b;
+	font-family: "Roboto", sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	text-align:center;
+	letter-spacing: 0.5rem;
+	
+
+}
+/*dsearch body*/
+  .searchbody{
+
+		position: relative;
+		z-index: 1;
+		background: #FFFFFF;
+		width: 760px;
+		margin: 0 auto 100px;
+		padding: 45px;
+		text-align: center;
+		box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+		// background: #d1cbe9; /* fallback for old browsers */
+ 		// //  background: -webkit-linear-gradient(right, #c9c2e6, #b1c2df);
+ 		// //  background: -moz-linear-gradient(right, #c9c2e6, #b1c2df);
+  		// // background: -o-linear-gradient(right, #c9c2e6, #b1c2df);
+ 		// //  background: linear-gradient(to left, #c9c2e6, #b1c2df);
+ 		 font-family: "Roboto", sans-serif;
+ 		 -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;  
+          font-family: "Roboto", sans-serif;  
+  }
+/*doctor search*/
+  .doctorsearch
+  {		box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      margin-top: 100px;
+      margin-bottom: 50px;
+      margin-left: 500px;
+    width: 500px;
+    font-family: "Roboto", sans-serif;
+  }

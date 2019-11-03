@@ -1,0 +1,30 @@
+
+<!-- Heading -->
+<header class="header">
+
+
+ <div class= "topspacing"></div>
+<div class="heading_Main">Search for a Doctor</div>
+<!-- input form to search for doctor -->
+<div id="search">
+  <form>
+    <input type="text" class="doctorsearch" name="searchterms" placeholder="Search" [(ngModel)]="searchterms">
+  </form>
+</div>
+
+<table class="searchbody table table-striped table-bordered table-hover">
+  <tr>
+    <th class="">Name</th>
+    <th class="">Speciality</th>
+    <!--<th>Date Posted</th>-->
+    <th class="">Action</th>
+  </tr>
+<!-- doctor search results -->
+  <tr *ngFor='let doc of docdetails | search:searchterms'>
+    <td>{{doc.fullName}}</td>
+    <td>{{doc.speciality}}</td>
+    <td>
+      <a [routerLink]="['/appointment']"> Book now</a>
+    </td>
+  </tr>
+</table>

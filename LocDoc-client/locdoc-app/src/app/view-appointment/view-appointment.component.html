@@ -1,0 +1,107 @@
+
+<header class="header">
+    <div id="userInfo" hidden>{{jsonData}}</div>
+    <div class="heading_Main">Loc-Doc</div><br></header>
+    <div class= "topspacing"></div>
+    <ul>
+        <li><a class="active" (click)="userHome()">Home</a></li>
+    
+        <li><a><span class="navbar" [routerLink]="['/login']" routerLinkActive="router-link-active" >Logout</span></a></li>
+    </ul>
+   
+   <div class="homePage">
+
+    <div class="userDetails" ng-show="checked" *ngIf="show">
+        
+        <span class="user-header">Personal Details</span>
+        <br>
+     
+          <mat-form-field appearance="outline">
+              <mat-label>Full Name</mat-label>
+              <input matInput placeholder="Full Name" [(ngModel)]="fullname" required readonly> 
+            </mat-form-field> &nbsp; &nbsp; &nbsp;
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput placeholder="Email Id" [(ngModel)]="emailId" email="true" readonly required> 
+            </mat-form-field> &nbsp; &nbsp; &nbsp;
+            <mat-form-field appearance="outline">
+              <mat-label>Address</mat-label>
+              <input matInput placeholder="Local Adress" [(ngModel)]="localAddress" readonly required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>City</mat-label>
+              <input matInput placeholder="City" [(ngModel)]="city" readonly required>
+            </mat-form-field> &nbsp; &nbsp; &nbsp;
+            <mat-form-field appearance="outline">
+              <mat-label>State</mat-label>
+              <input matInput placeholder="State" [(ngModel)]="state" readonly required>
+            </mat-form-field> &nbsp; &nbsp; &nbsp;
+            <mat-form-field appearance="outline">
+                <mat-label>Gender</mat-label>
+                <input matInput placeholder="Gender" [(ngModel)]="gender"readonly required>
+              
+              
+            </mat-form-field> &nbsp; &nbsp; &nbsp; &nbsp;
+            <mat-form-field apperance="outline">
+                <input matInput [matDatepicker]="picker" placeholder="Date of Birth" [(ngModel)]="dateofBirth" readonly required>
+                <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> -->
+              </mat-form-field>
+             &nbsp; &nbsp; &nbsp; &nbsp;
+          
+            <mat-form-field appearance="outline">
+              <mat-label>Contact Number</mat-label>
+              <input matInput placeholder="Contact Number" [(ngModel)]="contactNumber" readonly required>
+            </mat-form-field> &nbsp; &nbsp; &nbsp;
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput placeholder="Password" [(ngModel)]="password" readonly required>
+            </mat-form-field> &nbsp; &nbsp; &nbsp;
+       
+      
+  
+  </div>
+  
+     <div>
+       <table class="table table-striped table-bordered table-hover">
+         <tr>
+           <th>Name</th>
+           <th>Email</th>
+           <th>Contact Number</th>
+           <th>Doctor</th>
+           <th>Date</th>
+           <th>Time</th>
+           <th>Delete</th>
+           <th>unique ID</th>
+         </tr>
+  
+         <tr readonly *ngFor='let userapp of userappointment'>
+
+           <td>
+              <input  placeholder="Full Name" [(ngModel)]="userapp.patientName" required>
+           </td>
+           <td>
+              <input  placeholder="Full Name" [(ngModel)]="userapp.patientEmailId" required>
+           </td>
+           <td>
+              <input  placeholder="Full Name" [(ngModel)]="userapp.contactNumber" required>
+           </td>
+           <td>
+              <input  placeholder="Full Name" [(ngModel)]="userapp.dateofApp" required>
+           </td>
+           <td>
+              <input  placeholder="Full Name" [(ngModel)]="userapp.doctorName" required>
+           </td>
+           <td>
+              <input  placeholder="Full Name" [(ngModel)]="userapp.timeofApp" required>
+           </td>
+           <td (click)="deleteAppointment(userapp)">Delete</td>
+           <td><button class="btn btn btn-danger" (click)="updateApp(userapp)">Update</button></td>
+         </tr>
+       </table>
+  
+      
+  
+  </div>
+  </div>
+  
+  

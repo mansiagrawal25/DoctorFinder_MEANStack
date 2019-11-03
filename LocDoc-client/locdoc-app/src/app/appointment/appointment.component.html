@@ -1,0 +1,72 @@
+<!-- header -->
+<header class="header">
+
+  <span class="heading_Main">Loc-Doc</span><br>
+
+</header>
+<div class= "topspacing"></div>
+<!-- main body -->
+<div class="example-container">
+  <br>
+  <br>
+  <br>
+  <span class="heading--register">Book appointment</span><br><br><br>
+ 
+ <!-- book appointment body -->
+
+  <mat-form-field appearance="outline">
+    <mat-label>Full Name</mat-label>
+    <input matInput placeholder="Full Name" [(ngModel)]="patientName" required>
+  </mat-form-field> &nbsp; &nbsp; &nbsp;
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput placeholder="Email Id" [(ngModel)]="patientEmailId" email="true" required>
+  </mat-form-field> &nbsp; &nbsp; &nbsp;
+
+  <mat-form-field appearance="outline">
+    <mat-label>Contact Number</mat-label>
+    <input matInput placeholder="Contact Number" [(ngModel)]="contactNumber" type="number" ng-maxlength="10" minlength="9" maxlength="10" required>
+  </mat-form-field> &nbsp; &nbsp; &nbsp;
+
+  <mat-form-field appearance="outline">
+    <mat-select placeholder="Doctors"  [(ngModel)]="doctorName" required (click)="getDoctorsList()">
+      <!--<mat-option value="Male"></mat-option>-->
+      <mat-option *ngFor="let doctor of bookings" [value]="doctor.doctorEmailId">{{ doctor.fullName }}</mat-option>
+    </mat-select>
+  </mat-form-field> &nbsp; &nbsp; &nbsp; &nbsp;
+
+  <mat-form-field appearance="outline">
+    <mat-label>DATE</mat-label>
+    <input matInput [matDatepicker]="picker" placeholder="Date" [(ngModel)]="dateofApp" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field> &nbsp; &nbsp; &nbsp;
+
+  <!-- time slot drop down menu -->
+  <mat-form-field appearance="outline">
+    <mat-select placeholder="Time"  [(ngModel)]="timeofApp" required>
+      <!--<mat-option *ngFor="let doc of doctors">{{doc.timings}}</mat-option>-->
+      <mat-option id="time1" value="9:00 AM - 9:30 AM">9:00 AM - 9:30 AM</mat-option>
+      <mat-option id="time2" value="9:30 AM - 10:00 AM">9:00 AM - 9:30 AM</mat-option>
+      <mat-option id="time3" value="10:00 AM - 10:30 AM">10:00 AM - 10:30 AM</mat-option>
+      <mat-option id="time4" value="10:30 AM - 11:00 AM">10:30 AM - 11:00 AM</mat-option>
+      <mat-option id="time5" value="11:00 AM - 11:30 AM">11:00 AM - 11:30 AM</mat-option>
+      <mat-option id="time6" value="11:30 AM - 12:00 PM">11:30 AM - 12:00 PM</mat-option>
+      <mat-option id="time7" value="12:00 PM - 12:30 AM">12:00 PM - 12:30 AM</mat-option>
+      <mat-option id="time8" value="1:30 PM - 2:00 PM">1:30 PM - 2:00 PM</mat-option>
+      <mat-option id="time9" value="2:00 PM - 2:30 PM">2:00 PM - 2:30 PM</mat-option>
+      <mat-option id="time10" value="2:30 PM - 3:00 PM">2:30 PM - 3:00 PM</mat-option>
+      <mat-option id="time11" value="3:00 PM - 3:30 PM">3:00 PM - 3:30 PM</mat-option>
+    </mat-select>
+  </mat-form-field> &nbsp; &nbsp; &nbsp;
+
+
+<!-- Authentication Error: -->
+  <mat-card-actions>
+    <div class="auth-error" *ngIf="error">Please fill all required details</div><br>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<button class="btn-register"(click)="bookAppointment()" >Book Appointment</button>
+    <!--<button class="btn-register-logIn" [routerLink]="['/login']" routerLinkActive="router-link-active">Log In</button>-->
+  </mat-card-actions>
+
+</div>
